@@ -1,1 +1,1 @@
-# paidy-take-home
+# Paid Take Home Test
