@@ -10,6 +10,7 @@ package prob_3;
 import java.util.regex.Pattern;
 
 public class P3 {
+    // check for valid email pattern
     public boolean checkEmail(String str) {
         return Pattern
                 .compile(
@@ -18,6 +19,7 @@ public class P3 {
                 .matches();
     }
 
+    // check for valid phone number pattern
     public boolean checkPhone(String str) {
         return Pattern
                 .compile(
@@ -26,6 +28,7 @@ public class P3 {
                 .matches();
     }
 
+    // obfuscate email
     public String email(String str) {
         str = str.toLowerCase();
         String[] emailParts = str.split("@");
@@ -34,6 +37,7 @@ public class P3 {
         return ret;
     }
 
+    // obfuscate phone number
     public String phone(String str) {
         str = str.replace(" ", "-");
         char[] digits = str.toCharArray();
@@ -47,6 +51,7 @@ public class P3 {
                     numCount++;
                 }
             } else {
+                // replace all digits except last 4 with '*'
                 digits[i] = '*';
             }
         }
@@ -61,6 +66,7 @@ public class P3 {
         } else if (checkPhone(str)) {
             ret = phone(str);
         } else {
+            // return error if neither email nor phone number
             ret = "error";
         }
         return ret;

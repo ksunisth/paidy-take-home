@@ -13,6 +13,7 @@ class P1 {
         int tenthNum = num % 10;
         int hundredthNum = num % 100;
 
+        // check conditions for suffix
         if (tenthNum == 1 && hundredthNum != 11) {
             suff = "st";
         } else if (tenthNum == 2 && hundredthNum != 12) {
